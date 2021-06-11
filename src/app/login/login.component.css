@@ -1,0 +1,33 @@
+.bg-purple{
+    background-color:   #944dff;
+}
+.bg-purple-dark{
+    background-color:#6b3db1;
+}
+.bg-gray{
+    background-color: #ebebe0;
+}
+input[name=userid] , input[name=password]{
+    height: 40px;
+}
+::-webkit-input-placeholder{
+    font-size: 13px;
+}
+.btn-color{
+    background-color:  #00ccff;
+    width: 100%;
+}
+.text-color{
+    color: #00b386;
+}
+.error{
+    color: rgb(230, 55, 55);
+    font-size: 13px;
+    float: left;
+}
+.create-acc{
+    font-size: 16px;
+}
+input.ng-invalid.ng-touched{  
+    border:1px solid rgb(230, 55, 55);;  
+    }   

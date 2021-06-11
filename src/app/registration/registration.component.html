@@ -1,0 +1,44 @@
+<div class="mt-5 text-center rounded col-4 offset-4">
+    <form class="border rounded" #signupForm="ngForm" (ngSubmit)="signupdata(signupForm.value)"> 
+        <div class="pt-4 pb-2 rounded-top bg-purple">
+            <h5 class="text-white">REGISTRATION NOW</h5>
+        </div>
+        <div class="pt-3 pb-2 pl-4 pr-4 bg-gray">    
+            
+            <div class="form-group">
+                <input required type="text" name="username" #username="ngModel" placeholder="Username" class="form-control" ngModel >
+                <p *ngIf="username.invalid && username.touched" class="error">*Username is required</p>
+                <div *ngFor="let item of datalist">  
+                    <p *ngIf="item.username === username.value"  class="error">*Username is already exists.</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input required type="password" name="password" #password="ngModel" placeholder="Password" class="form-control" ngModel >
+                <p *ngIf="password.invalid && password.touched" class="error">*Password is required</p>
+            </div>
+
+            <div class="form-group">
+                <input required type="email" name="email" #email="ngModel" placeholder="Email" class="form-control" ngModel >
+                <p *ngIf="email.invalid && email.touched" class="error">*Email is required</p>
+            </div>
+
+            <div class="form-group">
+                <input required type="text" name="phoneNo" #phoneNo="ngModel" placeholder="PhoneNo" class="form-control" ngModel >
+                <p *ngIf="phoneNo.invalid && phoneNo.touched" class="error">*PhoneNo is required</p>
+            </div>
+
+            <div class="form-group">
+                <input required type="text" name="city" #city="ngModel" placeholder="City" class="form-control" ngModel >
+                <p *ngIf="city.invalid && city.touched" class="error">*City is required</p>
+            </div>
+
+        </div>
+        <div class="pt-2 pb-2 pl-4 pr-4">
+            <button [disabled]="signupForm.invalid"  type="submit"  class="pt-2 pb-2 text-white btn btn-color">SUBMIT</button>
+        </div>
+    </form>     
+    <p class="float-right mt-1 mr-4 create-acc text-black-50">
+        Already Registered. <a routerLink="/login" class="text-color text-decoration-none">Login</a>
+    </p>
+</div>

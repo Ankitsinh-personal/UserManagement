@@ -1,0 +1,28 @@
+<div class="mt-5 text-center rounded col-4 offset-4">
+    <form class="mt-5 ml-4 mr-4 border rounded" #loginForm="ngForm" (ngSubmit)="logindata(loginForm.value)"> 
+        <div class="pt-4 pb-4 rounded-top bg-purple">
+            <h4 class="text-white">SIGN IN NOW</h4>
+        </div>
+        <div class="pt-4 pb-2 pl-4 pr-4 bg-gray">
+            <div class="form-group">
+                <input required type="text" name="username" #username="ngModel" placeholder="Username" class="form-control" ngModel >
+                <p *ngIf="username.invalid && username.touched" class="error">*Username is required</p>
+            </div>
+            <div class="form-group">
+                <input required type="password" name="password" #password="ngModel" placeholder="Password" class="form-control" ngModel >
+                <p *ngIf="password.invalid && password.touched" class="error">*Password is required</p>
+            </div>
+        </div>
+        <div class="pt-4 pl-4 pr-4 text-justify checkbox">
+            <!-- <label class="text-black-50"><input type="checkbox" name="remember"> Remember me</label> -->
+            <!-- <a href="/login" class="float-right text-color text-decoration-none">Forgot Password?</a> -->
+          </div>
+        <div class="pt-2 pb-4 pl-4 pr-4 ">
+            <button [disabled]="loginForm.invalid" type="submit"  class="pt-2 pb-2 text-white btn btn-color">SIGN IN</button>
+        </div>
+    </form>     
+    <p class="float-right mt-2 mr-4 create-acc text-black-50">
+        Don't have an account yet? <a routerLink="/registration" class="text-color text-decoration-none">Create an account</a>
+    </p>
+</div>
+<!-- <app-dashboard [passdata]="parentdata"></app-dashboard> -->

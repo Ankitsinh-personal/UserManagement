@@ -1,0 +1,84 @@
+{
+  "user": [
+    {
+      "username": "ankisinh",
+      "password": "111",
+      "email": "a@gmail.com",
+      "phoneNo": "9857421562",
+      "city": "Nadiad",
+      "id": 1
+    },
+    {
+      "username": "aaa",
+      "password": "123",
+      "email": "a@gmail.com",
+      "phoneNo": "9758462135",
+      "city": "Ahmedabad",
+      "id": 2
+    },
+    {
+      "username": "nil",
+      "password": "nil",
+      "email": "abc@gmail.com",
+      "phoneNo": "8523697410",
+      "city": "vadodara",
+      "id": 3
+    },
+    {
+      "username": "user1",
+      "password": "user1",
+      "email": "u@gmail.com",
+      "phoneNo": "7785412369",
+      "city": "USA",
+      "id": 4
+    },
+    {
+      "username": "hfghfgh",
+      "password": "fghfgh",
+      "email": "a@gmail.com",
+      "phoneNo": "9754444",
+      "city": "Nadiad",
+      "id": 5
+    },
+    {
+      "username": "kjj",
+      "password": "kl",
+      "email": "a@gmail.com",
+      "phoneNo": "9754444",
+      "city": "Nadiad",
+      "id": 7
+    },
+    {
+      "username": "klkjl",
+      "password": "klkj",
+      "email": "a@gmail.com",
+      "phoneNo": "9754444",
+      "city": "Nadiad",
+      "id": 8
+    },
+    {
+      "username": "kjl",
+      "password": "kl",
+      "email": "a@gmail.com",
+      "phoneNo": "9754455",
+      "city": "Nadiad",
+      "id": 9
+    },
+    {
+      "username": "ankisinh",
+      "password": "ad",
+      "email": "a@gmail.com",
+      "phoneNo": "9754444",
+      "city": "Nadiad",
+      "id": 10
+    },
+    {
+      "username": "ankisinh",
+      "password": "555",
+      "email": "a@gmail.com",
+      "phoneNo": "9754444",
+      "city": "Nadiad",
+      "id": 11
+    }
+  ]
+}

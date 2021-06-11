@@ -1,0 +1,96 @@
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <!-- <h4 class="modal-title" id="modal-basic-title">Hi there!</h4> -->
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <div class=" text-center rounded">
+            <form class="border rounded" #signupForm="ngForm" (ngSubmit)="signupdata(signupForm.value)"> 
+                <div class="pt-3 pb-2 pl-4 pr-4 bg-gray">   
+                    <div class="form-group">
+                        <!-- <label>{{passData.id}}</label> -->
+                        <input required  type="hidden"  name="id" #id="ngModel" placeholder="id" class="form-control" [(ngModel)]="passData.id">
+                    </div>
+
+                    <div class="form-group">
+                        <input required type="text"  name="username" #username="ngModel" placeholder="Username" class="form-control" [(ngModel)]="passData.username" >
+                        <p *ngIf="username.invalid && username.touched" class="error">*Username is required</p>
+                          <!-- <p *ngIf=" username.value === 'ankitsinh' || username.value === 'nilesh' " class="error">*Username is already exists.</p> -->
+                    </div>
+        
+                    <div class="form-group">
+                        <input required type="password" name="password" #password="ngModel" placeholder="Password" class="form-control" [(ngModel)]="passData.password" >
+                        <p *ngIf="password.invalid && password.touched" class="error">*Password is required</p>
+                    </div>
+        
+                    <div class="form-group">
+                        <input required type="email" name="email" #email="ngModel" placeholder="Email" class="form-control" [(ngModel)]="passData.email" >
+                        <p *ngIf="email.invalid && email.touched" class="error">*Email is required</p>
+                    </div>
+        
+                    <div class="form-group">
+                        <input required type="text" name="phoneNo" #phoneNo="ngModel" placeholder="PhoneNo" class="form-control" [(ngModel)]="passData.phoneNo" >
+                        <p *ngIf="phoneNo.invalid && phoneNo.touched" class="error">*PhoneNo is required</p>
+                    </div>
+        
+                    <div class="form-group">
+                        <input required type="text" name="city" #city="ngModel" placeholder="City" class="form-control" [(ngModel)]="passData.city" >
+                        <p *ngIf="city.invalid && city.touched" class="error">*City is required</p>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-info mb-3 mt-3 pl-4 pr-4" (click)="c('Save click')">Submit</button>
+            </form>          
+        </div>
+    </div>
+</ng-template>
+  
+
+<div class="m-5">   
+    <button type="button" class="text-white btn btn-info float-right mb-3 ml-5  pl-3 pr-3" (click)="logout()">LOGOUT</button>
+    <button type="button" class="text-white btn btn-info float-right mb-3 mr-3 pl-3 pr-3" (click)="open(content , '')" >ADD USER</button>
+    
+    <table class="table  table-striped"  id="table"
+    data-search="true"
+    data-custom-search="customSearch"
+    data-url="/data.json">
+        <thead class="border bg-dark text-white">
+            <th>Username</th>
+            <th> Password</th>
+            <th>Email</th>
+            <th>PhoneNo</th>
+            <th>City</th>
+            <th>Edit User</th>
+            <th>Delete User</th>
+        </thead>
+
+        <tbody >     
+            <tr *ngFor="let item of datalist">
+                <td class="border">{{item.username}}</td>
+                <td class="border">{{item.password}}</td>
+                <td class="border">{{item.email}}</td>
+                <td class="border">{{item.phoneNo}}</td>
+                <td class="border">{{item.city}}</td>
+                <td class="border">            
+                    <button type="button" class="text-white btn btn-info pl-3 pr-3" (click)="open(content , item)">EDIT</button>
+                </td>
+                <td class="border">
+                    <button type="button" class="text-white btn btn-info pl-3 pr-3"  (click)="deleteUser(item)">DELETE</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+        <!-- <ngb-pagination  class="d-flex justify-content-center" [collectionSize]="10" [(page)]="page" [maxSize]="5" [pageSize]="pageSize" aria-label="Default pagination"></ngb-pagination> -->
+    <div class="d-flex justify-content-between p-2">
+  <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="refreshCountries()">
+  </ngb-pagination>
+
+  <select class="custom-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="refreshCountries()">
+    <option [ngValue]="2">2 items per page</option>
+    <option [ngValue]="4">4 items per page</option>
+    <option [ngValue]="6">6 items per page</option>
+  </select>
+</div>
+</div>
