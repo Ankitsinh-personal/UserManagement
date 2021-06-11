@@ -6,21 +6,7 @@ import { UserServiceService } from "../user-service.service";
 import { NgbPagination  } from "@ng-bootstrap/ng-bootstrap";
 import * as $ from "jquery";
 
-// interface Country {
-//   id?: number;
-//   username: string;
-//   password: string;
-//   email: string;
-//   phoneNo: string;
-// }
-// const COUNTRIES: Country[] = [
-//   {
-//     username: 'Russia',
-//     password: 'f/f3/Flag_of_Russia.svg',
-//     email: '17075200',
-//     phoneNo: '146989754'
-//   }
-// ]
+ 
 @Component({
   selector: 'app-userlist',
   templateUrl: './userlist.component.html',
@@ -97,6 +83,5 @@ export class UserlistComponent implements OnInit {
   logout(){
     this.userService.logout();
   }
-
 
 }
